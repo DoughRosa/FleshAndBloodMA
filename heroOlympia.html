@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAB MA</title>
+    <link
+      rel="stylesheet"
+      href="./assets/bootstrap-5.3.3-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <div class="row logoAndSearch d-flex">
+            <div class="col-12 col-md-4 logo-container">
+              <a class="navbar-brand" href="./index.html">
+                <img
+                  class="logo"
+                  src="./images/FAB_logo.png"
+                  alt="Logo"
+                  width="130"
+                  height="58"
+                />
+                <h3 class="text-light">Flesh and Blood MA</h3>
+              </a>
+            </div>
+            <div
+              class="col-12 col-md-8 input-container d-flex align-items-center justify-content-center"
+            >
+              <input
+                id="searchInput"
+                onkeydown="if(event.keyCode === 13) searchHero()"
+                class="form-control searchBox"
+                type="text"
+                placeholder="Type the name of your hero here"
+                autocomplete="off"
+              />
+              <button
+                id="searchButton"
+                class="btn search btn-outline-light ms-2"
+                type="submit"
+                onclick="searchHero()"
+              >
+                Search
+              </button>
+              <div class="row">
+                <div class="col-12 justify-content-center align-items-center">
+                  <div class="result-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="nothing"></div>
+
+    <main id="site-content" class="container-fluid text-light site-content">
+      <div id="latest_content" class="row mt-4">
+        <div class="col-12 d-flex"><h2>Latest Videos</h2></div>
+        <div class="row" id="row_latest"></div>
+        <section id="buttons">
+          <div
+            class="pagination d-flex justify-content-center align-items-center p-2"
+          >
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="latestFirstPageBtn"
+              onclick="firstPageLatestOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="latestPrevPageBtn"
+              onclick="prevPageLatestOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <small
+              class="text-light m-2"
+              style="font-size: 4vh"
+              id="latestCurrentPage"
+            >
+              1
+            </small>
+            <button
+              class="pageButtons p-2"
+              id="latestNextPageBtn"
+              onclick="nextPageLatestOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              id="latestLastPageBtn"
+              onclick="lastPageLatestOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <hr />
+
+      <div id="worlds_content" class="row mt-4">
+        <div class="col-12"><h2>Worlds</h2></div>
+        <div class="row my-4" id="row_worlds"></div>
+        <section id="buttons">
+          <div
+            class="pagination d-flex justify-content-center align-items-center p-2"
+          >
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="worldsFirstPageBtn"
+              onclick="firstPageWorldsOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="worldsPrevPageBtn"
+              onclick="prevPageWorldsOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <small
+              class="text-light m-2"
+              style="font-size: 4vh"
+              id="worldsCurrentPage"
+            >
+              1
+            </small>
+            <button
+              class="pageButtons p-2"
+              id="worldsNextPageBtn"
+              onclick="nextPageWorldsOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              id="worldsLastPageBtn"
+              onclick="lastPageWorldsOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <hr/>
+      </div>
+
+
+      <div id="protour_content" class="row mt-4">
+        <div class="col-12"><h2>Pro Tour</h2></div>
+        <div class="row my-4" id="row_protour"></div>
+        <section id="buttons">
+          <div
+            class="pagination d-flex justify-content-center align-items-center p-2"
+          >
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="protourFirstPageBtn"
+              onclick="firstPageProtourOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="protourPrevPageBtn"
+              onclick="prevPageProtourOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <small
+              class="text-light m-2"
+              style="font-size: 4vh"
+              id="protourCurrentPage"
+            >
+              1
+            </small>
+            <button
+              class="pageButtons p-2"
+              id="protourNextPageBtn"
+              onclick="nextPageProtourOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              id="protourLastPageBtn"
+              onclick="lastPageProtourOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <hr />
+      </div>
+
+
+      <div id="calling_content" class="row mt-4">
+        <div class="col-12"><h2>Calling</h2></div>
+        <div class="row my-4" id="row_calling"></div>
+        <section id="buttons">
+          <div
+            class="pagination d-flex justify-content-center align-items-center p-2"
+          >
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="callingFirstPageBtn"
+              onclick="firstPageCallingOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="callingPrevPageBtn"
+              onclick="prevPageCallingOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <small
+              class="text-light m-2"
+              style="font-size: 4vh"
+              id="callingCurrentPage"
+            >
+              1
+            </small>
+            <button
+              class="pageButtons p-2"
+              id="callingNextPageBtn"
+              onclick="nextPageCallingOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              id="callingLastPageBtn"
+              onclick="lastPageCallingOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <hr />
+      </div>
+
+
+      <div id="bh_content" class="row mt-4">
+        <div class="col-12"><h2>Battle Hardned</h2></div>
+        <div class="row my-4" id="row_bh"></div>
+        <section id="buttons">
+          <div
+            class="pagination d-flex justify-content-center align-items-center p-2"
+          >
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="bhFirstPageBtn"
+              onclick="firstPageBhOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="bhPrevPageBtn"
+              onclick="prevPageBhOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <small
+              class="text-light m-2"
+              style="font-size: 4vh"
+              id="bhCurrentPage"
+            >
+              1
+            </small>
+            <button
+              class="pageButtons p-2"
+              id="bhNextPageBtn"
+              onclick="nextPageBhOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              id="bhLastPageBtn"
+              onclick="lastPageBhOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <hr />
+      </div>
+
+      <div id="pq_content" class="row mt-4">
+        <div class="col-12"><h2>Pro Quest</h2></div>
+        <div class="row my-4" id="row_pq"></div>
+        <section id="buttons">
+          <div
+            class="pagination d-flex justify-content-center align-items-center p-2"
+          >
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="pqFirstPageBtn"
+              onclick="firstPagePqOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="pqPrevPageBtn"
+              onclick="prevPagePqOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <small
+              class="text-light m-2"
+              style="font-size: 4vh"
+              id="pqCurrentPage"
+            >
+              1
+            </small>
+            <button
+              class="pageButtons p-2"
+              id="pqNextPageBtn"
+              onclick="nextPagePqOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              id="pqLastPageBtn"
+              onclick="lastPagePqOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+        <hr />
+      </div>
+
+
+      <div id="age_content" class="row mt-4">
+        <div class="col-12"><h2>Age</h2></div>
+        <div class="row my-4" id="row_age"></div>
+        <section id="buttons">
+          <div
+            class="pagination d-flex justify-content-center align-items-center p-2"
+          >
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="ageFirstPageBtn"
+              onclick="firstPageAgeOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              disabled
+              id="agePrevPageBtn"
+              onclick="prevPageAgeOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                />
+              </svg>
+            </button>
+            <small
+              class="text-light m-2"
+              style="font-size: 4vh"
+              id="ageCurrentPage"
+            >
+              1
+            </small>
+            <button
+              class="pageButtons p-2"
+              id="ageNextPageBtn"
+              onclick="nextPageAgeOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+            <button
+              class="pageButtons p-2"
+              id="ageLastPageBtn"
+              onclick="lastPageAgeOlympia()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-double-right"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+      <div
+      class="modal fade"
+      id="modal-movie"
+      tabindex="-1"
+      aria-labelledby="${video.id}Label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header bg-dark">
+            <nav class="navbar">
+              <div class="container-fluid">
+                <div class="row logoAndSearch d-flex">
+                  <div class="col-12 col-md-4 logo-container">
+                    <a class="navbar-brand" href="./index.html">
+                      <img
+                        class="logo"
+                        src="./images/FAB_logo.png"
+                        alt="Logo"
+                        width="130"
+                        height="58"
+                      />
+                      <h3 class="text-light">Flesh and Blood MA</h3>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            id="modal-body-movie"
+            class="modal-body bg-dark justify-content-center d-flex"
+          ></div>
+          <div class="modal-footer bg-dark">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nothing"></div>
+
+    <footer class="bg-black p-3">
+      <div class="container">
+        <div class="row">
+          <div class="col text-light">
+            <p>
+              Flesh And Blood Match Assistant is in no way affiliated with Legend Story Studios. Legend Story
+              Studios®, Flesh and Blood™, and set names are trademarks of Legend
+              Story Studios. Flesh and Blood characters, cards, logos, and art are
+              property of Legend Story Studios.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <h4 class="text-danger">Created by</h4> <h3 class="ps-2 text-danger">Douglas Rosa</h3>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/videos.js"></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/scripts.js"></script>
+    <script src="../scripts/pagination/paginationOlympia.js"></script>
+    <script src="./scripts/displayHero.js"></script>
+  </body>
+</html>
