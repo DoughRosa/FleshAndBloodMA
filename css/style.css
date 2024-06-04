@@ -425,6 +425,10 @@ h2{
         top: 40px;
         left: 90px;
     }
+
+    footer{
+        position: relative;
+    }
     
     .search{
         position: absolute;
