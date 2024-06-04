@@ -81,14 +81,6 @@ const videos = [
     class: "pq"
   },
   {
-    title: "Nuu vs Katsu",
-    description: `Pro Quest Montreal <br> Round 6 <br> Daniel Dreisziger <br> vs <br> Kevin Constantineau.`,
-    hash: "bVuJItQe5yg",
-    game: "bVuJItQe5yg?si=dY3LWOb8ibHgkvve&amp;start=19865",
-    hero: "nuu katsu",
-    class: "pq"
-  },
-  {
     title: "Kano vs Vynnset",
     description: `Pro Quest Montreal <br> Round 7 <br> Yan Garito <br> vs <br> Niko Bonnay.`,
     hash: "bVuJItQe5yg",
