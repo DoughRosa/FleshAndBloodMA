@@ -516,7 +516,74 @@ h2{
         top: 80px;
         left: 395px;
     }
+
+    .card-img{
+        width: 16vw;
+    }
+    
+    .card-title{
+        padding-bottom: 10px;
+        background-color: black;
+        width: 16vw;
+    }
+    
+    .card-body{
+        display: none;
+        z-index: 999;
+        position: absolute;
+        width: 16vw;
+        background-color: rgba(0, 0, 0, 0.481);
+        border-bottom: 2px;
+        border-radius: 0% 0% 5% 5%;
+        padding-top: 10px;
+    }
 }
 
+@media (min-width: 2561px) {
+
+    .searchBox{
+        width: 1500px;
+        position: absolute;
+        top: 40px;
+        left: 190px;
+    }
+    
+    .search{
+        width: 100px;
+        position: absolute;
+        top: 40px;
+        left: 1900px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .result-box{
+        width: 1500px;
+        position: absolute;
+        top: 80px;
+        left: 395px;
+    }
+
+    .card-img{
+        width: 16vw;
+    }
+    
+    .card-title{
+        padding-bottom: 10px;
+        background-color: black;
+        width: 16vw;
+    }
+    
+    .card-body{
+        display: none;
+        z-index: 999;
+        position: absolute;
+        width: 16vw;
+        background-color: rgba(0, 0, 0, 0.481);
+        border-bottom: 2px;
+        border-radius: 0% 0% 5% 5%;
+        padding-top: 10px;
+    }
+}
 
 
