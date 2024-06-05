@@ -1,1 +1,1 @@
-<img src="images/FAB_logo.png">
+<img src="images/FabMaGif.gif">
