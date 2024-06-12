@@ -1,5 +1,86 @@
 const videos = [
-  //------------------ PRO QUEST -------------------------//
+  //------------------ BH SINGAPORE -------------------------------//
+  {
+    title: "Enigma vs Enigma",
+    description: `Battle Hardned Singapore <br> Round 1 <br> Elliot Tan <br> vs <br> Kai Yang.`,
+    hash: "QyWROlI68SM",
+    game: "QyWROlI68SM?si=pXpCMbYKgP_fHsxY&amp;start=565",
+    hero: "enigma",
+    class: "battlehardned"
+  },
+  {
+    title: "Levia vs Zen",
+    description: `Battle Hardned Singapore <br> Round 2 <br> Jian Han <br> vs <br> Nicholas Loh.`,
+    hash: "QyWROlI68SM",
+    game: "QyWROlI68SM?si=pXpCMbYKgP_fHsxY&amp;start=4575",
+    hero: "levia zen",
+    class: "battlehardned"
+  },
+  {
+    title: "Kayo vs Maxx",
+    description: `Battle Hardned Singapore <br> Round 3 <br> Jia Zheng <br> vs <br> Esmond Heng.`,
+    hash: "QyWROlI68SM",
+    game: "QyWROlI68SM?si=pXpCMbYKgP_fHsxY&amp;start=8081",
+    hero: "kayo maxx",
+    class: "battlehardned"
+  },
+  {
+    title: "Betsy vs Kayo",
+    description: `Battle Hardned Singapore <br> Round 4 <br> Teo Joo Eng <br> vs <br> Ho Wei Jie.`,
+    hash: "QyWROlI68SM",
+    game: "QyWROlI68SM?si=pXpCMbYKgP_fHsxY&amp;start=11721",
+    hero: "betsy kayo",
+    class: "battlehardned"
+  },
+  {
+    title: "Nuu vs Dorinthea",
+    description: `Battle Hardned Singapore <br> Round 5 <br> James Lim <br> vs <br> Richard Anthony.`,
+    hash: "QyWROlI68SM",
+    game: "QyWROlI68SM?si=pXpCMbYKgP_fHsxY&amp;start=17299",
+    hero: "nuu dorinthea",
+    class: "battlehardned"
+  },
+  {
+    title: "Levia vs Betsy",
+    description: `Battle Hardned Singapore <br> Round 6 <br> Denny Sunario <br> vs <br> Tee Joo Eng.`,
+    hash: "QyWROlI68SM",
+    game: "QyWROlI68SM?si=pXpCMbYKgP_fHsxY&amp;start=21285",
+    hero: "levia betsy",
+    class: "battlehardned"
+  },
+  {
+    title: "Uzuri vs Azalea",
+    description: `Battle Hardned Singapore <br> Round 7 <br> Wiroon Juesathainrat <br> vs <br> Jian Wei Tee.`,
+    hash: "QyWROlI68SM",
+    game: "QyWROlI68SM?si=pXpCMbYKgP_fHsxY&amp;start=25091",
+    hero: "uzuri azalea",
+    class: "battlehardned"
+  },
+  {
+    title: "Dash vs Victor",
+    description: `Battle Hardned Singapore <br> Top 8 <br> Kah Deng Fu <br> vs <br> Yeo Xie Hang.`,
+    hash: "QyWROlI68SM",
+    game: "QyWROlI68SM?si=pXpCMbYKgP_fHsxY&amp;start=29855",
+    hero: "dash victor",
+    class: "battlehardned"
+  },
+  {
+    title: "Zen vs Dorinthea",
+    description: `Battle Hardned Singapore <br> Top 4 <br> Teo Ivan <br> vs <br> Lee Gabriel.`,
+    hash: "QyWROlI68SM",
+    game: "QyWROlI68SM?si=pXpCMbYKgP_fHsxY&amp;start=32926",
+    hero: "zen dorinthea",
+    class: "battlehardned"
+  },
+  {
+    title: "Zen vs Dash",
+    description: `Battle Hardned Singapore <br> Finals <br> Teo Ivan <br> vs <br> Kong Bryan.`,
+    hash: "QyWROlI68SM",
+    game: "QyWROlI68SM?si=pXpCMbYKgP_fHsxY&amp;start=35471",
+    hero: "zen dash",
+    class: "battlehardned"
+  },
+  //------------------ PRO QUEST MONTREAL -------------------------//
   {
     title: "Kano vs Enigma",
     description: `Pro Quest Montreal <br> Round 1 <br> Benson Lai <br> vs <br> Noah Clark.`,
