@@ -1,4 +1,174 @@
 const videos = [
+  //------------------ Nationals ----------------------------------//
+  {
+    title: "Zen vs Enigma",
+    description: `National Championship USA <br> Round 1 <br> Charles Dunn <br> vs <br> Pheano Black.`,
+    hash: "AFxsqO0xg7w",
+    game: "AFxsqO0xg7w?si=mPVY5dOjHKXgw-dp&amp;start=777",
+    hero: "zen enigma",
+    class: "national"
+  },
+  {
+    title: "Dash I/O vs Levia",
+    description: `National Championship USA <br> Round 2 <br> Mara Faris <br> vs <br> Michael Rutkowski.`,
+    hash: "AFxsqO0xg7w",
+    game: "AFxsqO0xg7w?si=mPVY5dOjHKXgw-dp&amp;start=4695",
+    hero: "dashIo levia",
+    class: "national"
+  },
+  {
+    title: "Riptide vs Dorinthea",
+    description: `National Championship USA <br> Round 2 <br> Gabriel Torres <br> vs <br> Joshua Lau.`,
+    hash: "AFxsqO0xg7w",
+    game: "AFxsqO0xg7w?si=mPVY5dOjHKXgw-dp&amp;start=6368",
+    hero: "riptide dorinthea",
+    class: "national"
+  },
+  {
+    title: "Nuu vs Zen",
+    description: `National Championship USA <br> Round 3 <br> Noah Geiger <br> vs <br> Pat Eshguy.`,
+    hash: "AFxsqO0xg7w",
+    game: "AFxsqO0xg7w?si=mPVY5dOjHKXgw-dp&amp;start=9279",
+    hero: "zen nuu",
+    class: "national"
+  },
+  {
+    title: "Boltyn vs Maxx",
+    description: `National Championship USA <br> Round 4 <br> Alex Tyler <br> vs <br> Justin Fryar.`,
+    hash: "AFxsqO0xg7w",
+    game: "AFxsqO0xg7w?si=mPVY5dOjHKXgw-dp&amp;start=13149",
+    hero: "boltyn maxx",
+    class: "national"
+  },
+  {
+    title: "Levia vs Kayo",
+    description: `National Championship USA <br> Round 4 <br> Chris Iaali <br> vs <br> Bryan Knecht.`,
+    hash: "AFxsqO0xg7w",
+    game: "AFxsqO0xg7w?si=mPVY5dOjHKXgw-dp&amp;start=14648",
+    hero: "levia kayo",
+    class: "national"
+  },
+  {
+    title: "Kayo vs Enigma",
+    description: `National Championship USA <br> Round 11 <br> Andrew Rothermel <br> vs <br> Aaron Grace.`,
+    hash: "JhEHwVred3M",
+    game: "JhEHwVred3M?si=kV4xLVxoCI4Muw5l&amp;start=10748",
+    hero: "enigma kayo",
+    class: "national"
+  },
+  {
+    title: "Boltyn vs Zen",
+    description: `National Championship USA <br> Round 11 <br> Reese Toomre <br> vs <br> Jacob Shaker.`,
+    hash: "JhEHwVred3M",
+    game: "JhEHwVred3M?si=kV4xLVxoCI4Muw5l&amp;start=13201",
+    hero: "boltyn zen",
+    class: "national"
+  },
+  {
+    title: "Kayo vs Enigma",
+    description: `National Championship USA <br> Round 11 <br> Andrew Rothermel <br> vs <br> Aaron Grace.`,
+    hash: "JhEHwVred3M",
+    game: "JhEHwVred3M?si=kV4xLVxoCI4Muw5l&amp;start=10748",
+    hero: "enigma kayo",
+    class: "national"
+  },
+  {
+    title: "Azalea vs Zen",
+    description: `National Championship USA <br> Round 12 <br> Isaac Brooks <br> vs <br> Michael Dalton.`,
+    hash: "JhEHwVred3M",
+    game: "JhEHwVred3M?si=kV4xLVxoCI4Muw5l&amp;start=14859",
+    hero: "azalea zen",
+    class: "national"
+  },
+  {
+    title: "Boltyn vs Kano",
+    description: `National Championship USA <br> Round 13 <br> Reese Toomre <br> vs <br> Majin Bae.`,
+    hash: "JhEHwVred3M",
+    game: "JhEHwVred3M?si=kV4xLVxoCI4Muw5l&amp;start=18615",
+    hero: "boltyn kano",
+    class: "national"
+  },
+  {
+    title: "Azalea vs Enigma",
+    description: `National Championship USA <br> Round 13 <br> Will Bradshaw <br> vs <br> Nathan Lapham.`,
+    hash: "JhEHwVred3M",
+    game: "JhEHwVred3M?si=kV4xLVxoCI4Muw5l&amp;start=20702",
+    hero: "enigma azalea",
+    class: "national"
+  },
+  {
+    title: "Kayo vs Enigma",
+    description: `National Championship USA <br> Round 14 <br> Andrew Rothermel <br> vs <br> Brian Lorenz.`,
+    hash: "JhEHwVred3M",
+    game: "JhEHwVred3M?si=kV4xLVxoCI4Muw5l&amp;start=23098",
+    hero: "enigma kayo",
+    class: "national"
+  },
+  {
+    title: "Zen vs Boltyn",
+    description: `National Championship USA <br> Round 14 <br> Naib Mobassir <br> vs <br> Reese Toomre.`,
+    hash: "JhEHwVred3M",
+    game: "JhEHwVred3M?si=kV4xLVxoCI4Muw5l&amp;start=25085",
+    hero: "zen boltyn",
+    class: "national"
+  },
+  {
+    title: "Enigma vs Prism",
+    description: `National Championship USA <br> Top 8 <br> Aaron Grace <br> vs <br> Austin Somers.`,
+    hash: "TfUyZeNo73E",
+    game: "TfUyZeNo73E?si=SzolxzqTkmt0B5je&amp;start=928",
+    hero: "enigma prism",
+    class: "national"
+  },
+  {
+    title: "Zen vs Zen",
+    description: `National Championship USA <br> Top 8 <br> Jacob Shaker <br> vs <br> Michael Dalton.`,
+    hash: "TfUyZeNo73E",
+    game: "TfUyZeNo73E?si=SzolxzqTkmt0B5je&amp;start=3419",
+    hero: "zen",
+    class: "national"
+  },
+  {
+    title: "Azalea vs Kayo",
+    description: `National Championship USA <br> Top 8 <br> William Bradshaw <br> vs <br> Andrew Rothermel.`,
+    hash: "TfUyZeNo73E",
+    game: "TfUyZeNo73E?si=SzolxzqTkmt0B5je&amp;start=6434",
+    hero: "azalea kayo",
+    class: "national"
+  },
+  {
+    title: "Zen vs Enigma",
+    description: `National Championship USA <br> Top 8 <br> Evan Herndon <br> vs <br> Nathan Lapham.`,
+    hash: "TfUyZeNo73E",
+    game: "TfUyZeNo73E?si=SzolxzqTkmt0B5je&amp;start=9488",
+    hero: "zen enigma",
+    class: "national"
+  },
+  {
+    title: "Enigma vs Kayo",
+    description: `National Championship USA <br> Top 4 <br> Aaron Grace <br> vs <br> Andrew Rothermel.`,
+    hash: "TfUyZeNo73E",
+    game: "TfUyZeNo73E?si=SzolxzqTkmt0B5je&amp;start=12042",
+    hero: "enigma kayo",
+    class: "national"
+  },
+  {
+    title: "Zen vs Zen",
+    description: `National Championship USA <br> Top 4 <br> Evan Herndon <br> vs <br> Michael Dalton.`,
+    hash: "TfUyZeNo73E",
+    game: "TfUyZeNo73E?si=SzolxzqTkmt0B5je&amp;start=15979",
+    hero: "zen",
+    class: "national"
+  },
+  {
+    title: "Zen vs Kayo",
+    description: `National Championship USA <br> Final <br> Evan Herdon <br> vs <br> Andrew Rothermel.`,
+    hash: "TfUyZeNo73E",
+    game: "TfUyZeNo73E?si=SzolxzqTkmt0B5je&amp;start=18807",
+    hero: "zen kayo",
+    class: "national"
+  },
+  
   //------------------ BH SINGAPORE -------------------------------//
   {
     title: "Enigma vs Enigma",
