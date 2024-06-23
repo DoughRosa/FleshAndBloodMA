@@ -1,5 +1,78 @@
 const videos = [
-  //------------------ Nationals ----------------------------------//
+  //------------------ Nationals UK ----------------------------------//
+  {
+    title: "Dash vs Nuu",
+    description: `National Championship UK <br> Round 1 <br> Alex Chitu <br> vs <br> Adam Harbinson.`,
+    hash: "XgpmQg_8aEY",
+    game: "XgpmQg_8aEY?si=-PT2ygXJWQ9UroeC&amp;start=1612",
+    hero: "dash nuu",
+    class: "national"
+  },
+  {
+    title: "Azalea vs Riptide",
+    description: `National Championship UK <br> Round 2 <br> Liam Holden <br> vs <br> Declan Patrick.`,
+    hash: "XgpmQg_8aEY",
+    game: "XgpmQg_8aEY?si=-PT2ygXJWQ9UroeC&amp;start=5300",
+    hero: "azalea riptide",
+    class: "national"
+  },
+  {
+    title: "Kano vs Prism",
+    description: `National Championship UK <br> Round 3 <br> Liam Canning <br> vs <br> Matthew Foulkes.`,
+    hash: "XgpmQg_8aEY",
+    game: "XgpmQg_8aEY?si=-PT2ygXJWQ9UroeC&amp;start=9514",
+    hero: "kano prism",
+    class: "national"
+  },
+  {
+    title: "Nuu vs Prism",
+    description: `National Championship UK <br> Round 10 <br> Violet Burn <br> vs <br> Matthew Foulkes.`,
+    hash: "4Xq2gpGoZP8",
+    game: "4Xq2gpGoZP8?si=YRqt94A8kK_wNnck&amp;start=995",
+    hero: "nuu prism",
+    class: "national"
+  },
+  {
+    title: "Kano vs Zen",
+    description: `National Championship UK <br> Round 11 <br> Noah Hicks <br> vs <br> Emad Kashy.`,
+    hash: "4Xq2gpGoZP8",
+    game: "4Xq2gpGoZP8?si=YRqt94A8kK_wNnck&amp;start=4314",
+    hero: "kano zen",
+    class: "national"
+  },
+  {
+    title: "Zen vs Zen",
+    description: `National Championship UK <br> Round 12 <br> Isaac Murray <br> vs <br> George Rodger.`,
+    hash: "4Xq2gpGoZP8",
+    game: "4Xq2gpGoZP8?si=YRqt94A8kK_wNnck&amp;start=8513",
+    hero: "zen",
+    class: "national"
+  },
+  {
+    title: "Riptide vs Prism",
+    description: `National Championship UK <br> Top 8 <br> Andrew Rayner <br> vs <br> Jack Mountford.`,
+    hash: "4Xq2gpGoZP8",
+    game: "4Xq2gpGoZP8?si=YRqt94A8kK_wNnck&amp;start=16256",
+    hero: "riptide prism",
+    class: "national"
+  },
+  {
+    title: "Riptide vs Dash",
+    description: `National Championship UK <br> Top 4 <br> Andrew Rayner <br> vs <br> Anton Cid Mejias.`,
+    hash: "4Xq2gpGoZP8",
+    game: "4Xq2gpGoZP8?si=YRqt94A8kK_wNnck&amp;start=20676",
+    hero: "riptide dash",
+    class: "national"
+  },
+  {
+    title: "Zen vs Dash",
+    description: `National Championship UK <br> Finals <br> Emad Kashy <br> vs <br> Anton Cid Mejias.`,
+    hash: "4Xq2gpGoZP8",
+    game: "4Xq2gpGoZP8?si=YRqt94A8kK_wNnck&amp;start=24964",
+    hero: "zen dash",
+    class: "national"
+  },
+  //------------------ Nationals USA ----------------------------------//
   {
     title: "Zen vs Enigma",
     description: `National Championship USA <br> Round 1 <br> Charles Dunn <br> vs <br> Pheano Black.`,
